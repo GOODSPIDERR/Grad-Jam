@@ -2190,6 +2190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1437389339907284464}
   - component: {fileID: 1474955816926480580}
+  - component: {fileID: 1781579723188143947}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -2197,6 +2198,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1781579723188143947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781579723188143946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1917179ba3627f145b1970e5c51b0bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1781579723340788432
 GameObject:
   m_ObjectHideFlags: 0
@@ -3401,7 +3414,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3024212899023074529}
   - component: {fileID: 8037197629337153673}
-  - component: {fileID: 8037197629337153674}
   m_Layer: 0
   m_Name: Pillow
   m_TagString: Untagged
@@ -3427,19 +3439,6 @@ MonoBehaviour:
   hitForce: 200
   pillowPrefab: {fileID: 1413198453119165857, guid: 5b22e008e8784da4a9f0b8fc6a19db6a, type: 3}
   rayOrigin: {x: 0, y: 0, z: 0}
---- !u!114 &8037197629337153674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8037197629337153672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1917179ba3627f145b1970e5c51b0bae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swing: 0
 --- !u!4 &8245583005978431328
 Transform:
   m_ObjectHideFlags: 0
