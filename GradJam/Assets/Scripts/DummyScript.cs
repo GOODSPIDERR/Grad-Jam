@@ -44,7 +44,6 @@ public class DummyScript : MonoBehaviour
                 }
             }
             if(spotting() && hearing() < 30){
-                Debug.Log("spotted");
                 agro = true;
                 agent.SetDestination(enemy.transform.position);
             }
@@ -69,8 +68,7 @@ public class DummyScript : MonoBehaviour
         layerMask = ~layerMask;
 
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, enemy.transform.position, out hit, Mathf.Infinity, layerMask)){ //This is the troublesome line.
-            Debug.DrawRay(transform.position, targetDir * 30, Color.yellow);
+        if(Physics.Raycast(transform.position, targetDir, out hit, Mathf.Infinity, layerMask)){
             return false;
         }
 
