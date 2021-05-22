@@ -131,6 +131,26 @@ public class FirstPersonController : MonoBehaviour
 
     #endregion
 
+    //Liam is causing trouble. ------------------------------------------
+
+    public bool getCrouch(){
+        if(isCrouched){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public bool getSprint(){
+        if(isSprinting){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //End Trouble -------------------------------------------------------
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
