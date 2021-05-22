@@ -18,8 +18,9 @@ public class DummyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Hearing
         if(agro){
-            if(fpc.getCrouch() && spotting() > 25){
+            if(fpc.getCrouch() && hearing() > 20 && !spotting()){
                 agro = false;
                 agent.SetDestination(transform.position);
             } else {
@@ -27,25 +28,30 @@ public class DummyScript : MonoBehaviour
             }
         } else {
             if(fpc.getSprint()){
-                if(spotting() < 50){
+                if(hearing() < 20){
                     agro = true;
                     agent.SetDestination(enemy.transform.position);
                 }
             } else if(fpc.getCrouch()) {
-                if(spotting() < 10){
+                if(hearing() < 5){
                     agro = true;
                     agent.SetDestination(enemy.transform.position);
                 }
             } else {
-                if(spotting() < 25){
+                if(hearing() < 10){
                     agro = true;
                     agent.SetDestination(enemy.transform.position);
                 }
             }
+            if(spotting() && hearing() < 30){
+                Debug.Log("spotted");
+                agro = true;
+                agent.SetDestination(enemy.transform.position);
+            }
         }
     }
 
-    double spotting(){
+    double hearing(){
         double x, z, dist;
         x = transform.position.x - enemy.transform.position.x;
         z = transform.position.z - enemy.transform.position.z;
@@ -53,5 +59,25 @@ public class DummyScript : MonoBehaviour
         z = z * z;
         dist = Math.Sqrt(x + z);
         return dist;
+    }
+
+    bool spotting(){
+        Vector3 targetDir = enemy.transform.position - transform.position;
+        float angle = Vector3.Angle(targetDir, transform.forward);
+
+        int layerMask = 1 << 6;
+        layerMask = ~layerMask;
+
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, enemy.transform.position, out hit, Mathf.Infinity, layerMask)){ //This is the troublesome line.
+            Debug.DrawRay(transform.position, targetDir * 30, Color.yellow);
+            return false;
+        }
+
+        if(angle < 60f){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
