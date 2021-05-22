@@ -941,6 +941,7 @@ MonoBehaviour:
   hearingRange: 10
   spottingRange: 30
   spottingAngle: 60
+  pushForce: 75
 --- !u!195 &1356396679
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -951,7 +952,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1033,7 +1034,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356396677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.389431, y: -2.09, z: 22.637968}
+  m_LocalPosition: {x: 0.389431, y: -1.48, z: 22.637968}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 358106888}
@@ -1465,6 +1466,10 @@ PrefabInstance:
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: sprintFOV
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: enableZoom

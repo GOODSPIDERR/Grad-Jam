@@ -9,23 +9,27 @@ public class DummyScript : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject enemy;
     public FirstPersonController fpc;
-    public float hearingRange, spottingRange, spottingAngle;
-    private bool agro;
+    private Rigidbody erb;
+    public float hearingRange, spottingRange, spottingAngle, pushForce;
+    private bool agro, attack;
 
     void Start(){
-        agro = false;
+        agro = attack =  false;
+        erb = enemy.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Hearing
         if(agro){
             if(fpc.getCrouch() && hearing() > hearingRange && !spotting()){
                 agro = false;
                 agent.SetDestination(transform.position);
             } else {
                 agent.SetDestination(enemy.transform.position);
+                if(hearing() <= 2){
+                    attack = true;
+                }
             }
         } else {
             if(fpc.getSprint()){
@@ -48,6 +52,13 @@ public class DummyScript : MonoBehaviour
                 agro = true;
                 agent.SetDestination(enemy.transform.position);
             }
+        }
+    }
+
+    void FixedUpdate(){
+        if(attack){
+            knockback();
+            attack = false;
         }
     }
 
@@ -78,5 +89,11 @@ public class DummyScript : MonoBehaviour
         } else {
             return false;
         }
+    }
+
+    void knockback(){
+        Vector3 targetDir = enemy.transform.position - transform.position;
+        targetDir.y = 0;
+        erb.AddForce(targetDir.normalized * pushForce, ForceMode.Impulse);
     }
 }
