@@ -5,6 +5,7 @@ using UnityEngine;
 public class PillowHit : MonoBehaviour
 {
     private Animator pillowAnim;
+    public bool swing = false;
 
     void Start()
     {
@@ -14,6 +15,21 @@ public class PillowHit : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!swing) //if you swing for the first time
+            {
+                pillowAnim.SetBool("swingLeftBool", true);
+                
+            }
+            else if (swing)
+            {
+                pillowAnim.SetBool("swingBool", false);
+
+            }
+
+            swing = true;
+
+        }
     }
 }

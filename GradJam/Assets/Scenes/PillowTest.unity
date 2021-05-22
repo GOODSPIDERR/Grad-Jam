@@ -1641,6 +1641,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: enableZoom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: enableHeadBob
       value: 0
       objectReference: {fileID: 0}
@@ -3435,7 +3439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1917179ba3627f145b1970e5c51b0bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pillowAnim: {fileID: 0}
+  swing: 0
 --- !u!4 &8245583005978431328
 Transform:
   m_ObjectHideFlags: 0

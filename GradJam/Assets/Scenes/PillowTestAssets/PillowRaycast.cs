@@ -24,7 +24,7 @@ public class PillowRaycast : MonoBehaviour
     {
         Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
         // Check if the player has pressed the fire button and if enough time has elapsed since they last fired
-        if (Input.GetMouseButtonDown(0) && Time.time > nextThrowDelay)
+        if (Input.GetMouseButtonDown(1) && Time.time > nextThrowDelay)
         {
            
             // Update the time when our player can fire next
