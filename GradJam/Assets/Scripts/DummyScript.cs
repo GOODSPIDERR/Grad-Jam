@@ -6,15 +6,18 @@ using System;
 
 public class DummyScript : MonoBehaviour
 {
-    public NavMeshAgent agent;
-    public GameObject enemy;
-    public FirstPersonController fpc;
+    private NavMeshAgent agent;
+    private GameObject enemy;
+    private FirstPersonController fpc;
     private Rigidbody erb;
     public float hearingRange, spottingRange, spottingAngle, pushForce;
     private bool agro, attack;
 
     void Start(){
         agro = attack =  false;
+        agent = gameObject.GetComponent<NavMeshAgent>();
+        enemy = GameObject.FindGameObjectsWithTag("Player")[0];
+        fpc = enemy.GetComponent<FirstPersonController>();
         erb = enemy.GetComponent<Rigidbody>();
     }
 
