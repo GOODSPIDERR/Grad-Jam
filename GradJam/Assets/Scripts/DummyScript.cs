@@ -9,6 +9,7 @@ public class DummyScript : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject enemy;
     public FirstPersonController fpc;
+    public float hearingRange, spottingRange, spottingAngle;
     private bool agro;
 
     void Start(){
@@ -20,7 +21,7 @@ public class DummyScript : MonoBehaviour
     {
         //Hearing
         if(agro){
-            if(fpc.getCrouch() && hearing() > 20 && !spotting()){
+            if(fpc.getCrouch() && hearing() > hearingRange && !spotting()){
                 agro = false;
                 agent.SetDestination(transform.position);
             } else {
@@ -28,22 +29,22 @@ public class DummyScript : MonoBehaviour
             }
         } else {
             if(fpc.getSprint()){
-                if(hearing() < 20){
+                if(hearing() < (2 * hearingRange)){
                     agro = true;
                     agent.SetDestination(enemy.transform.position);
                 }
             } else if(fpc.getCrouch()) {
-                if(hearing() < 5){
+                if(hearing() < (0.5 * hearingRange)){
                     agro = true;
                     agent.SetDestination(enemy.transform.position);
                 }
             } else {
-                if(hearing() < 10){
+                if(hearing() < hearingRange){
                     agro = true;
                     agent.SetDestination(enemy.transform.position);
                 }
             }
-            if(spotting() && hearing() < 30){
+            if(spotting() && hearing() < spottingRange){
                 agro = true;
                 agent.SetDestination(enemy.transform.position);
             }
@@ -72,7 +73,7 @@ public class DummyScript : MonoBehaviour
             return false;
         }
 
-        if(angle < 60f){
+        if(angle < spottingAngle){
             return true;
         } else {
             return false;
