@@ -40,7 +40,7 @@ public class SheepHitter : MonoBehaviour
             //if health has fallen below zero, make it disappear 
             gameObject.SetActive(false);
             GameObject clone;
-            clone = Instantiate(poofPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as GameObject;
+            clone = Instantiate(poofPrefab, new Vector3(transform.position.x, transform.position.y + 1.2f, transform.position.z), transform.rotation) as GameObject;
         }
     }
 

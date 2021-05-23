@@ -119,6 +119,7 @@ public class PillowHit : MonoBehaviour
     {
         if (!hasHit)
         {
+            mainCamera.localPosition = new Vector3(0, 0, 0);
             hasHit = true;
             Sequence shakeSequence = DOTween.Sequence();
             shakeSequence.Append(mainCamera.DOShakePosition(0.6f, new Vector3(0.4f, 0.4f, 0f), 30, 10, false, true));
