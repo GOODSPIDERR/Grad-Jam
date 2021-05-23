@@ -8,10 +8,12 @@ public class SheepHitter : MonoBehaviour
     public static Vector3 sheepLocation;
     //The sheeps' current health point total
     public int currentHealth;
+    public GameObject poofPrefab;
     //private AudioSource sheepSound;
     //public List<AudioClip> mySheepSounds = new List<AudioClip>();
     public bool bigSheep;
     public bool smolSheep;
+
 
 
 
@@ -37,18 +39,25 @@ public class SheepHitter : MonoBehaviour
             //sheepSound.PlayOneShot(mySheepSounds[Random.Range(0, 3)]);
             //if health has fallen below zero, make it disappear 
             gameObject.SetActive(false);
+            GameObject clone;
+            clone = Instantiate(poofPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as GameObject;
         }
     }
 
-    void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(collision.gameObject.name);
         if (other.gameObject.CompareTag("Pillow"))
         {
             Damage(1);
-            Debug.Log("I'm hit noooo");
+            //Debug.Log("I'm hit noooo");
         }
-        Debug.Log("hit");
+        //Debug.Log("hit");
     }
-
 }
+
+
+
+
+
+
+

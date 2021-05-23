@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class BoomerangEffect : MonoBehaviour
 {
-
     bool go;
     GameObject player;
     GameObject pillow;
-    public Transform flatPillowToRotate;//the pillow in the prefab
-    //PillowRaycast script;
-    //Vector3 boomerangOrigin;
+    public Transform flatPillowToRotate;
+
     GameObject pillowMesh;
     private AudioSource sound;
     public List<AudioClip> pillowSounds = new List<AudioClip>();
@@ -23,12 +21,7 @@ public class BoomerangEffect : MonoBehaviour
         player = GameObject.Find("Player");
         pillow = GameObject.Find("Pillow");
         pillowMesh = GameObject.Find("PillowMesh");
-        pillowMesh.GetComponent<SkinnedMeshRenderer>().enabled = false; //make original pillow invisible
-                                                                        //itemToRotate = gameObject.transform.GetChild(0); //find pillow   
-                                                                        //script = GetComponent<PillowRaycast>();
-                                                                        //boomerangOrigin = new Vector3(script.rayOrigin.x, script.rayOrigin.y, script.rayOrigin.z);
-                                                                        //boomerangOrigin = script.rayOrigin;
-                                                                        //sound = GetComponent<AudioSource>();
+        pillowMesh.GetComponent<SkinnedMeshRenderer>().enabled = false; 
 
         StartCoroutine(Boom());
 
@@ -42,10 +35,11 @@ public class BoomerangEffect : MonoBehaviour
         go = false;
     }
 
-    void OnCollisionEnter(Collision collision)
+    /*void OnCollisionEnter(Collision collision)
     {
         go = false;
     }
+    */
 
     // Update is called once per frame
     void Update()
