@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class SheepHitter : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class SheepHitter : MonoBehaviour
     //The sheeps' current health point total
     public int currentHealth = 3;
     private AudioSource sheepSound;
+    public List<AudioClip> mySheepSounds = new List<AudioClip>();
+    public bool bigSheep;
 
 
 
@@ -21,11 +24,11 @@ public class SheepHitter : MonoBehaviour
     {
         //subtract damage amount when Damage function is called
         currentHealth -= damageAmount;
-        sheepSound.Play();
+        sheepSound.PlayOneShot(mySheepSounds[Random.Range(0, 3)]);
         //Check if health has fallen below zero
         if (currentHealth <= 0)
         {
-            sheepSound.Play();
+            sheepSound.PlayOneShot(mySheepSounds[Random.Range(0, 3)]);
             //if health has fallen below zero, make it disappear 
             gameObject.SetActive(false);
         }

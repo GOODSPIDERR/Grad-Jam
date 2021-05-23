@@ -288,6 +288,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 3
+  mySheepSounds:
+  - {fileID: 8300000, guid: 9a96efaa3ca7a4946a02bb5447a22394, type: 3}
+  - {fileID: 8300000, guid: fcda148098c653c4198ad869fa0ba5f0, type: 3}
+  - {fileID: 8300000, guid: f6b9da9b1b69f224382a8736839e3d30, type: 3}
+  - {fileID: 8300000, guid: 39318c628767d3f4eb73802afdbe2de7, type: 3}
+  bigSheep: 0
 --- !u!82 &504180597
 AudioSource:
   m_ObjectHideFlags: 0
@@ -300,8 +306,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d792072051dff1d4687da9cab1b74465, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.33
+  m_Pitch: 0.17
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -588,8 +594,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d792072051dff1d4687da9cab1b74465, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.33
+  m_Pitch: 0.17
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -685,6 +691,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 3
+  mySheepSounds:
+  - {fileID: 8300000, guid: 9a96efaa3ca7a4946a02bb5447a22394, type: 3}
+  - {fileID: 8300000, guid: fcda148098c653c4198ad869fa0ba5f0, type: 3}
+  - {fileID: 8300000, guid: f6b9da9b1b69f224382a8736839e3d30, type: 3}
+  - {fileID: 8300000, guid: 39318c628767d3f4eb73802afdbe2de7, type: 3}
+  bigSheep: 0
 --- !u!54 &1071465232
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -829,6 +841,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 3
+  mySheepSounds:
+  - {fileID: 8300000, guid: 9a96efaa3ca7a4946a02bb5447a22394, type: 3}
+  - {fileID: 8300000, guid: fcda148098c653c4198ad869fa0ba5f0, type: 3}
+  - {fileID: 8300000, guid: f6b9da9b1b69f224382a8736839e3d30, type: 3}
+  - {fileID: 8300000, guid: 39318c628767d3f4eb73802afdbe2de7, type: 3}
+  bigSheep: 0
 --- !u!82 &1252686358
 AudioSource:
   m_ObjectHideFlags: 0
@@ -841,8 +859,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d792072051dff1d4687da9cab1b74465, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.33
+  m_Pitch: 0.17
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1058,6 +1076,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 3
+  mySheepSounds:
+  - {fileID: 8300000, guid: 9a96efaa3ca7a4946a02bb5447a22394, type: 3}
+  - {fileID: 8300000, guid: fcda148098c653c4198ad869fa0ba5f0, type: 3}
+  - {fileID: 8300000, guid: f6b9da9b1b69f224382a8736839e3d30, type: 3}
+  - {fileID: 8300000, guid: 39318c628767d3f4eb73802afdbe2de7, type: 3}
+  bigSheep: 0
 --- !u!82 &1303846093
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1070,8 +1094,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d792072051dff1d4687da9cab1b74465, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.33
+  m_Pitch: 0.17
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1282,6 +1306,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 3
+  mySheepSounds:
+  - {fileID: 8300000, guid: 9a96efaa3ca7a4946a02bb5447a22394, type: 3}
+  - {fileID: 8300000, guid: fcda148098c653c4198ad869fa0ba5f0, type: 3}
+  - {fileID: 8300000, guid: f6b9da9b1b69f224382a8736839e3d30, type: 3}
+  - {fileID: 8300000, guid: 39318c628767d3f4eb73802afdbe2de7, type: 3}
+  bigSheep: 0
 --- !u!82 &1362959612
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1294,8 +1324,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d792072051dff1d4687da9cab1b74465, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.33
+  m_Pitch: 0.17
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1506,6 +1536,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 3
+  mySheepSounds:
+  - {fileID: 8300000, guid: 9a96efaa3ca7a4946a02bb5447a22394, type: 3}
+  - {fileID: 8300000, guid: fcda148098c653c4198ad869fa0ba5f0, type: 3}
+  - {fileID: 8300000, guid: f6b9da9b1b69f224382a8736839e3d30, type: 3}
+  - {fileID: 8300000, guid: 39318c628767d3f4eb73802afdbe2de7, type: 3}
+  bigSheep: 0
 --- !u!82 &1405632457
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1516,7 +1552,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d792072051dff1d4687da9cab1b74465, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1704,6 +1740,10 @@ PrefabInstance:
     - target: {fileID: 4459864850190357395, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864851310106426, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -2228,6 +2268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftHit: 1
+  iwasThrown: 0
 --- !u!1 &1781579723340788432
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,7 +2618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8037197629337153672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.02, z: 0.6173428}
+  m_LocalPosition: {x: 0, y: -0.095, z: 0.6173428}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1437389339907284464}

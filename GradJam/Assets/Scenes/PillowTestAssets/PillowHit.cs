@@ -6,10 +6,13 @@ public class PillowHit : MonoBehaviour
 {
     private Animator pillowAnim;
     public bool leftHit = true;
+    public bool iwasThrown;
+    
 
     void Start()
     {
         pillowAnim = gameObject.GetComponent<Animator>();
+
     }
     public void EndSwingLeft()
     {
@@ -24,9 +27,53 @@ public class PillowHit : MonoBehaviour
         //print("right done");
 
     }
+    public void Moving()
+    {
+        if (Input.GetKey(KeyCode.W) || (Input.GetKey(KeyCode.S)))
+        {
+            pillowAnim.SetBool("movingBool", true);
+            //pillowAnim.SetTrigger("movementTrigger");
+            //print("I'm moving");
+        }
+        else
+        {
+            pillowAnim.SetBool("movingBool", false);
+        }
+    }
+    public void Throw()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            pillowAnim.SetTrigger("throwTrigger");
+            print("I'm throwing");
+            //iwasThrown = true;
+            StartCoroutine(WaitaSecond());
+        }
+    }
+    public void Catch()
+    {
+         if (iwasThrown)
+         {
+             pillowAnim.SetTrigger("catchTrigger");
+             print("I'm catching");
+            iwasThrown = false;
+         }        
+         //iwasThrown = false;
+    }
+    IEnumerator WaitaSecond()
+    {
+        //iwasThrown = true;
+        yield return new WaitForSeconds(0.5f); //how long to wait till it returns
+        iwasThrown = true;
+    }
+
+
+
     void Update()
     {
-        
+        Moving();
+        Throw();
+        Catch();
         
         if (Input.GetMouseButtonDown(0))
         {
@@ -47,7 +94,7 @@ public class PillowHit : MonoBehaviour
 
             }
             
-            //pillowAnim.SetBool("startBlendTree", true);
+            
 
 
         }
