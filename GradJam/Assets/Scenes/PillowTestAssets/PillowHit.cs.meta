@@ -3,7 +3,10 @@ guid: 1917179ba3627f145b1970e5c51b0bae
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - reach: {instanceID: 0}
+  - mainCamera: {instanceID: 0}
+  - featherVFX: {fileID: 2359544484471660266, guid: 87cb23b6df1171b488347bcc4cb7f334, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

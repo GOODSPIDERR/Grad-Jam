@@ -14,6 +14,8 @@ public class PillowHit : MonoBehaviour
     private Collider hittingStuff;
     public bool canAttack = true;
     public Transform mainCamera;
+    public GameObject featherVFX;
+    public Transform featherSpawn;
 
     void Start()
     {
@@ -114,5 +116,6 @@ public class PillowHit : MonoBehaviour
         shakeSequence.Append(mainCamera.DOShakePosition(0.6f, new Vector3(0.4f, 0.4f, 0f), 30, 10, false, true));
         shakeSequence.Append(mainCamera.DOLocalMove(new Vector3(0, 0, 0), 0.4f));
         shakeSequence.Play();
+        Instantiate(featherVFX, featherSpawn.position, transform.rotation);
     }
 }
