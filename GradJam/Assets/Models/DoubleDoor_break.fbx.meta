@@ -9,6 +9,9 @@ ModelImporter:
   - first:
       74: 262217295226247585
     second: doubledoorsAction.001
+  - first:
+      74: 1125764335478650101
+    second: doubledoorsAction.002
   externalObjects: {}
   materials:
     materialImportMode: 2
