@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CountDown : MonoBehaviour
 {
@@ -28,10 +29,14 @@ public class CountDown : MonoBehaviour
             sec = simple % 60;
             minutes.text = "" + min + ":";
             if(timer < 0){
+                /*
                 Debug.Log("Game Over");
                 timer = 1;
                 race = false;
                 seconds.text = "00";
+                */
+                Scene scene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(scene.name, LoadSceneMode.Single);
             } else if(sec < 10) {
                 seconds.text = "0" + sec;
             } else {
