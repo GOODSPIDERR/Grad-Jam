@@ -25,7 +25,7 @@ public class RespawnerScript : MonoBehaviour
         }
 
         if(transform.position.y < -10f){
-            transform.position = new Vector3(-70.6f, 22f, 267.8f);
+            transform.position = new Vector3(-61f, 21.6f, 267.7f);
         }
         /*
         if(distance() < 1){
