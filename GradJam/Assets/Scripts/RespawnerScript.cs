@@ -27,10 +27,11 @@ public class RespawnerScript : MonoBehaviour
         if(transform.position.y < -10f){
             transform.position = new Vector3(-70.6f, 22f, 267.8f);
         }
-
+        /*
         if(distance() < 1){
             SceneManager.LoadScene("", LoadSceneMode.Single);
         }
+        */
     }
 
     double distance(){

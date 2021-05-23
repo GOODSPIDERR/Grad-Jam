@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 524054144349091375}
   - component: {fileID: 524054144349091374}
   - component: {fileID: -4354301713611075685}
+  - component: {fileID: 423340692157089895}
   m_Layer: 0
   m_Name: Poof
   m_TagString: Untagged
@@ -4959,3 +4960,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &423340692157089895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524054144349091373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a6987471accf947aa9f9b0b1d9853f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
