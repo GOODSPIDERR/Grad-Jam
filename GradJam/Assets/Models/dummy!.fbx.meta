@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 78a02c02d17078c46b656b2f96a875f6
+guid: 7eea599121ac1e34a844364241f4e6ae
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: -4278195077568096562
-    second: doubledoorsAction
+      74: 3094330708855449807
+    second: Untitled
   - first:
-      74: 262217295226247585
-    second: doubledoorsAction.001
+      74: -6166518291711419495
+    second: _Idle
   - first:
-      74: 1125764335478650101
-    second: doubledoorsAction.002
+      74: -1304387373167265313
+    second: Hit
   externalObjects: {}
   materials:
     materialImportMode: 2
