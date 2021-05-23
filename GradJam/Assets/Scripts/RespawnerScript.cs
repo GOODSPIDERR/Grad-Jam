@@ -22,7 +22,7 @@ public class RespawnerScript : MonoBehaviour
     {
         if (Input.GetKeyDown("escape"))
         {
-            //SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         }
 
         if (transform.position.y < -10f)
