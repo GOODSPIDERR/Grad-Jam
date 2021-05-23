@@ -10,6 +10,8 @@ public class CountDown : MonoBehaviour
     float timer = 180;
     Text minutes, seconds;
     public bool race = false;
+    public AudioSource backgroundMusic;
+    public AudioSource ambientSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,9 @@ public class CountDown : MonoBehaviour
             min = simple / 60;
             sec = simple % 60;
             minutes.text = "" + min + ":";
-            if(timer < 0){
+            backgroundMusic.Play();
+            ambientSound.Play();
+            if (timer < 0){
                 /*
                 Debug.Log("Game Over");
                 timer = 1;
