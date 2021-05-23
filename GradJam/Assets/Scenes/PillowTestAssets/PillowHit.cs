@@ -16,6 +16,8 @@ public class PillowHit : MonoBehaviour
     public Transform mainCamera;
     public GameObject featherVFX;
     public Transform featherSpawn;
+    public AudioSource swipeSound, hitSound;
+    bool hasHit;
 
     void Start()
     {
@@ -84,9 +86,12 @@ public class PillowHit : MonoBehaviour
         Throw();
         Catch();
 
-        if (Input.GetMouseButtonDown(0) && canAttack)
+        if (Input.GetMouseButton(0) && canAttack)
         {
+            hasHit = false;
             pillowAnim.SetTrigger("swingTrigger");
+            swipeSound.pitch = Random.Range(0.95f, 1.05f);
+            swipeSound.Play();
 
             /*
             if (leftHit)
@@ -112,10 +117,17 @@ public class PillowHit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) //Screenshake whenever you hit anything
     {
-        Sequence shakeSequence = DOTween.Sequence();
-        shakeSequence.Append(mainCamera.DOShakePosition(0.6f, new Vector3(0.4f, 0.4f, 0f), 30, 10, false, true));
-        shakeSequence.Append(mainCamera.DOLocalMove(new Vector3(0, 0, 0), 0.4f));
-        shakeSequence.Play();
-        Instantiate(featherVFX, featherSpawn.position, transform.rotation);
+        if (!hasHit)
+        {
+            hasHit = true;
+            Sequence shakeSequence = DOTween.Sequence();
+            shakeSequence.Append(mainCamera.DOShakePosition(0.6f, new Vector3(0.4f, 0.4f, 0f), 30, 10, false, true));
+            shakeSequence.Append(mainCamera.DOLocalMove(new Vector3(0, 0, 0), 0.4f));
+            shakeSequence.Play();
+            Instantiate(featherVFX, featherSpawn.position, transform.rotation);
+            hitSound.pitch = Random.Range(0.95f, 1.05f);
+            hitSound.Play();
+        }
+
     }
 }
