@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class CountDown : MonoBehaviour
 {
     int min, sec, simple;
-    public float timer = 180, musicDelay = 2;
+    public float timer = 180;
     Text minutes, seconds;
     public bool race = false;
     public bool music = false;
@@ -32,8 +32,7 @@ public class CountDown : MonoBehaviour
     }
     public void MusicStart()
     {
-        //backgroundMusic.Play();
-        //ambientSound.Play();
+        
         alpha.Play();
         beta.Play();
     }
@@ -43,11 +42,9 @@ public class CountDown : MonoBehaviour
 
             if (!music)
             {
-                musicDelay -= Time.deltaTime;
-                if(musicDelay < 0){
                     music = true;
                     MusicStart();
-                }
+                
             }
 
             timer -= Time.deltaTime;
