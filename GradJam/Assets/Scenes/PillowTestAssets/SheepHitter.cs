@@ -46,6 +46,7 @@ public class SheepHitter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
         if (other.gameObject.CompareTag("Pillow"))
         {
             Damage(1);
