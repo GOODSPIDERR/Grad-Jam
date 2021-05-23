@@ -42,6 +42,9 @@ public class BoomerangEffect : MonoBehaviour
         go = false;
     }
 
+    void OnCollisionEnter(Collision collision){
+        go = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -51,7 +54,7 @@ public class BoomerangEffect : MonoBehaviour
         
         if (go)
         {
-                transform.position = Vector3.MoveTowards(transform.position, pillow.transform.position + pillow.transform.forward * 2f, Time.deltaTime * 10); //Change The Position To The Location In Front Of The Player           
+                transform.position = Vector3.MoveTowards(transform.position, pillow.transform.position + pillow.transform.forward * 3.5f, Time.deltaTime * 10); //Change The Position To The Location In Front Of The Player           
                 //sound.PlayOneShot(pillowSounds[0]);
         }
 
