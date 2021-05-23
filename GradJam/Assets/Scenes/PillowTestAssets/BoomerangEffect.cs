@@ -21,7 +21,7 @@ public class BoomerangEffect : MonoBehaviour
         player = GameObject.Find("Player");
         pillow = GameObject.Find("Pillow");
         pillowMesh = GameObject.Find("PillowMesh");
-        pillowMesh.GetComponent<SkinnedMeshRenderer>().enabled = false; 
+        pillowMesh.GetComponent<SkinnedMeshRenderer>().enabled = false;
 
         StartCoroutine(Boom());
 

@@ -11,6 +11,7 @@ public class PillowHit : MonoBehaviour
     private bool danger = false;
     private SheepHitter sheep;
     private Collider hittingStuff;
+    public bool canAttack = true;
     void Start()
     {
         pillowAnim = gameObject.GetComponent<Animator>();
@@ -31,7 +32,7 @@ public class PillowHit : MonoBehaviour
     }
     public void Moving()
     {
-        if (Input.GetKey(KeyCode.W) || (Input.GetKey(KeyCode.S)))
+        if (Input.GetKey(KeyCode.W) || (Input.GetKey(KeyCode.S)) || Input.GetKey(KeyCode.D) || (Input.GetKey(KeyCode.A)))
         {
             pillowAnim.SetBool("movingBool", true);
             //pillowAnim.SetTrigger("movementTrigger");
@@ -77,8 +78,11 @@ public class PillowHit : MonoBehaviour
         Throw();
         Catch();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canAttack)
         {
+            pillowAnim.SetTrigger("swingTrigger");
+
+            /*
             if (leftHit)
             {
                 //pillowAnim.SetBool("swingLeftBool", false);
@@ -95,10 +99,7 @@ public class PillowHit : MonoBehaviour
                 leftHit = true;
 
             }
-
-
-
-
+            */
         }
     }
 }

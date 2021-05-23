@@ -557,7 +557,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ef63c6a41acb58343b7115713e1ca7e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1091,7 +1091,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ef63c6a41acb58343b7115713e1ca7e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1532,6 +1532,7 @@ MonoBehaviour:
   leftHit: 1
   iwasThrown: 0
   reach: {fileID: 0}
+  canAttack: 1
 --- !u!135 &7495156557753773454
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1541,10 +1542,10 @@ SphereCollider:
   m_GameObject: {fileID: 6849575967748168660}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 2.01, y: 0.9, z: -3.18}
+  m_Radius: 4.79
+  m_Center: {x: 3.15, y: 3.31, z: -7.79}
 --- !u!1 &7255380763773895050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,7 +1636,7 @@ Transform:
   - {fileID: 3880368203466150910}
   m_Father: {fileID: 8877331471076705372}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.091551, y: 0.18676724, z: 21.958199}
 --- !u!1 &7419283278530317088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1730,7 +1731,7 @@ Transform:
   - {fileID: 6072336232775926457}
   m_Father: {fileID: 6072336233745269102}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 50.391293, y: 40.51553, z: 39.07779}
 --- !u!1 &8533648516259551465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,7 +1761,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3880368203466150910}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.2776234, y: 2.2565813, z: 64.32108}
 --- !u!1 &8814524337561877799
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,4 +2594,4 @@ Transform:
   - {fileID: 2526233980586210396}
   m_Father: {fileID: 7918875872556130880}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 13.241075, y: 10.553326, z: 84.174385}
