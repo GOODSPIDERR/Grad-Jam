@@ -7,15 +7,10 @@ public class PillowHit : MonoBehaviour
     private Animator pillowAnim;
     public bool leftHit = true;
     public bool iwasThrown;
-<<<<<<< Updated upstream
-
-
-=======
     public BoxCollider reach;
     private bool danger = false;
     private SheepHitter sheep;
     private Collider hittingStuff;
->>>>>>> Stashed changes
     void Start()
     {
         pillowAnim = gameObject.GetComponent<Animator>();
