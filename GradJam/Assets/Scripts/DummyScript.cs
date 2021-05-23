@@ -10,9 +10,10 @@ public class DummyScript : MonoBehaviour
     private GameObject enemy;
     private FirstPersonController fpc;
     private Rigidbody erb;
-    private AudioSource hitSound;
+   // private AudioSource hitSound;
     public float hearingRange, spottingRange, spottingAngle, pushForce;
     private bool agro, attack;
+    Animator sheepAnim;
 
     void Start(){
         agro = attack =  false;
@@ -20,10 +21,12 @@ public class DummyScript : MonoBehaviour
         enemy = GameObject.FindGameObjectsWithTag("Player")[0];
         fpc = enemy.GetComponent<FirstPersonController>();
         erb = enemy.GetComponent<Rigidbody>();
+        sheepAnim = GetComponent<Animator>();
 
-        AudioSource[] sounds;
-        sounds = GetComponents<AudioSource>();
-        hitSound = sounds[1];
+
+        //AudioSource[] sounds;
+        //sounds = GetComponents<AudioSource>();
+        //hitSound = sounds[1];
     }
 
     // Update is called once per frame
@@ -32,6 +35,7 @@ public class DummyScript : MonoBehaviour
         if(agro){
             if(fpc.getCrouch() && hearing() > hearingRange && !spotting()){
                 agro = false;
+                sheepAnim.SetBool("agro", false);
                 agent.SetDestination(transform.position);
             } else {
                 agent.SetDestination(enemy.transform.position);
@@ -43,21 +47,25 @@ public class DummyScript : MonoBehaviour
             if(fpc.getSprint()){
                 if(hearing() < (2 * hearingRange)){
                     agro = true;
+                    sheepAnim.SetBool("agro", true);
                     agent.SetDestination(enemy.transform.position);
                 }
             } else if(fpc.getCrouch()) {
                 if(hearing() < (0.5 * hearingRange)){
                     agro = true;
+                    sheepAnim.SetBool("agro", true);
                     agent.SetDestination(enemy.transform.position);
                 }
             } else {
                 if(hearing() < hearingRange){
                     agro = true;
+                    sheepAnim.SetBool("agro", true);
                     agent.SetDestination(enemy.transform.position);
                 }
             }
             if(spotting() && hearing() < spottingRange){
                 agro = true;
+                sheepAnim.SetBool("agro", true);
                 agent.SetDestination(enemy.transform.position);
             }
         }
@@ -103,6 +111,6 @@ public class DummyScript : MonoBehaviour
         Vector3 targetDir = enemy.transform.position - transform.position;
         targetDir.y = 0;
         erb.AddForce(targetDir.normalized * pushForce, ForceMode.Impulse);
-        hitSound.Play();
+        //hitSound.Play();
     }
 }
