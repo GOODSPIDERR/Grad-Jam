@@ -7,16 +7,19 @@ public class SheepHitter : MonoBehaviour
 
     public static Vector3 sheepLocation;
     //The sheeps' current health point total
-    public int currentHealth = 3;
+    public int currentHealth;
     //private AudioSource sheepSound;
     //public List<AudioClip> mySheepSounds = new List<AudioClip>();
     public bool bigSheep;
+    public bool smolSheep;
 
 
 
     public void Start()
     {
         sheepLocation = gameObject.transform.position;
+        if (bigSheep) currentHealth = 3;
+        if (smolSheep) currentHealth = 1;
         //sheepSound = GetComponent<AudioSource>();
         //AudioSource[] sounds;
         //sounds = GetComponents<AudioSource>();
