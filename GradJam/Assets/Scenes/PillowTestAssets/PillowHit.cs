@@ -7,7 +7,9 @@ public class PillowHit : MonoBehaviour
     private Animator pillowAnim;
     public bool leftHit = true;
     public bool iwasThrown;
-
+    public BoxCollider reach;
+    private bool danger = false;
+    private SheepHitter sheep;
 
     void Start()
     {
@@ -94,9 +96,25 @@ public class PillowHit : MonoBehaviour
 
             }
 
-
-
-
+            if(danger){
+                sheep.Damage(1);
+                Debug.Log("Hit");
+            }
         }
     }
+
+
+    void OnCollisionEnter(Collision collision){
+        Debug.Log("Mark");
+        if(collision.gameObject.tag == "Sheep"){
+            danger = true;
+            //GameObject temp = collision.gameObject;
+            //sheep = temp.GetComponent<SheepHitter>();
+        }
+    }
+
+    void OnCollisionExit(Collision collision){
+        danger = false;
+    }
+
 }
