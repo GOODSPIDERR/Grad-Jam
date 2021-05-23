@@ -7,8 +7,15 @@ public class PillowHit : MonoBehaviour
     private Animator pillowAnim;
     public bool leftHit = true;
     public bool iwasThrown;
+<<<<<<< Updated upstream
 
 
+=======
+    public BoxCollider reach;
+    private bool danger = false;
+    private SheepHitter sheep;
+    private Collider hittingStuff;
+>>>>>>> Stashed changes
     void Start()
     {
         pillowAnim = gameObject.GetComponent<Animator>();
@@ -45,7 +52,7 @@ public class PillowHit : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             pillowAnim.SetTrigger("throwTrigger");
-            print("I'm throwing");
+            //print("I'm throwing");
             //iwasThrown = true;
             StartCoroutine(WaitaSecond());
         }
@@ -55,7 +62,7 @@ public class PillowHit : MonoBehaviour
         if (iwasThrown)
         {
             pillowAnim.SetTrigger("catchTrigger");
-            print("I'm catching");
+            //print("I'm catching");
             iwasThrown = false;
         }
         //iwasThrown = false;
