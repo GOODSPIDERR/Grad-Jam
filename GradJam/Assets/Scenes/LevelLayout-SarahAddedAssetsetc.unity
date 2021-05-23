@@ -10773,6 +10773,10 @@ PrefabInstance:
       propertyPath: backgroundMusic
       value: 
       objectReference: {fileID: 660573038}
+    - target: {fileID: 2899817838451960854, guid: 70a662aae8ba923499aba2f71918f637, type: 3}
+      propertyPath: m_TagString
+      value: Pillow
+      objectReference: {fileID: 0}
     - target: {fileID: 8814524339025240368, guid: 70a662aae8ba923499aba2f71918f637, type: 3}
       propertyPath: m_Name
       value: Player
