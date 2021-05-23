@@ -10,6 +10,7 @@ public class DummyScript : MonoBehaviour
     private GameObject enemy;
     private FirstPersonController fpc;
     private Rigidbody erb;
+    private AudioSource hitSound;
     public float hearingRange, spottingRange, spottingAngle, pushForce;
     private bool agro, attack;
 
@@ -19,6 +20,10 @@ public class DummyScript : MonoBehaviour
         enemy = GameObject.FindGameObjectsWithTag("Player")[0];
         fpc = enemy.GetComponent<FirstPersonController>();
         erb = enemy.GetComponent<Rigidbody>();
+
+        AudioSource[] sounds;
+        sounds = GetComponents<AudioSource>();
+        hitSound = sounds[1];
     }
 
     // Update is called once per frame
@@ -30,7 +35,7 @@ public class DummyScript : MonoBehaviour
                 agent.SetDestination(transform.position);
             } else {
                 agent.SetDestination(enemy.transform.position);
-                if(hearing() <= 2){
+                if(hearing() <= 1){
                     attack = true;
                 }
             }
@@ -98,5 +103,6 @@ public class DummyScript : MonoBehaviour
         Vector3 targetDir = enemy.transform.position - transform.position;
         targetDir.y = 0;
         erb.AddForce(targetDir.normalized * pushForce, ForceMode.Impulse);
+        hitSound.Play();
     }
 }

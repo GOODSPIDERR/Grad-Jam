@@ -14,7 +14,10 @@ public class SheepHitter : MonoBehaviour
     public void Start()
     {
         sheepLocation = gameObject.transform.position;
-        sheepSound = GetComponent<AudioSource>();
+        //sheepSound = GetComponent<AudioSource>();
+        AudioSource[] sounds;
+        sounds = GetComponents<AudioSource>();
+        sheepSound = sounds[0];
 
     }
     public void Damage(int damageAmount)
@@ -31,6 +34,11 @@ public class SheepHitter : MonoBehaviour
         }
     }
 
-
+    void OnCollisionEnter(Collision collision){
+        //Debug.Log(collision.gameObject.name);
+        if(collision.gameObject.name == "pillow_flat"){
+            Damage(1);
+        }
+    }
 
 }

@@ -33,10 +33,12 @@ public class PillowRaycast : MonoBehaviour
             GameObject clone;
             clone = Instantiate(pillowPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as GameObject;
             
+            
 
             // Create a vector at the center of our camera's viewport
             Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
 
+            /*
             RaycastHit hit;
             if (Physics.Raycast(rayOrigin, cam.transform.forward, out hit, pillowRange))
             {
@@ -54,7 +56,7 @@ public class PillowRaycast : MonoBehaviour
                     pillowSound.Play();
                 }
             }
-    
+            */
         }
     }
 
