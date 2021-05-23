@@ -14,9 +14,6 @@ public class SheepHitter : MonoBehaviour
     public bool bigSheep;
     public bool smolSheep;
 
-
-
-
     public void Start()
     {
         sheepLocation = gameObject.transform.position;
@@ -24,17 +21,16 @@ public class SheepHitter : MonoBehaviour
         if (smolSheep) currentHealth = 1;
         sheepSound = GetComponent<AudioSource>();
 
-
     }
     public void Damage(int damageAmount)
     {
         //subtract damage amount when Damage function is called
-        currentHealth -= damageAmount;
         sheepSound.PlayOneShot(mySheepSounds[Random.Range(0, 2)]);
+        currentHealth -= damageAmount;
         //Check if health has fallen below zero
         if (currentHealth <= 0)
         {
-            sheepSound.PlayOneShot(mySheepSounds[Random.Range(0, 2)]);
+            //sheepSound.PlayOneShot(mySheepSounds[Random.Range(0, 2)]);
             //if health has fallen below zero, make it disappear 
             gameObject.SetActive(false);
             GameObject clone;
@@ -45,8 +41,10 @@ public class SheepHitter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log(other.name);
-        if (other.gameObject.CompareTag("Pillow"))
+        //if (other.gameObject.CompareTag("Pillow"))
+        if (other.tag == "Pillow" || other.tag == "FlyingPillow")
         {
+            sheepSound.PlayOneShot(mySheepSounds[Random.Range(0, 2)]);
             Damage(1);
             //Debug.Log("I'm hit noooo");
         }
