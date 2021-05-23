@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PillowHit : MonoBehaviour
 {
@@ -12,8 +13,11 @@ public class PillowHit : MonoBehaviour
     private SheepHitter sheep;
     private Collider hittingStuff;
     public bool canAttack = true;
+    public Transform mainCamera;
+
     void Start()
     {
+
         pillowAnim = gameObject.GetComponent<Animator>();
 
     }
@@ -45,7 +49,7 @@ public class PillowHit : MonoBehaviour
     }
     public void Throw()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && canAttack)
         {
             pillowAnim.SetTrigger("throwTrigger");
             //print("I'm throwing");
@@ -101,5 +105,14 @@ public class PillowHit : MonoBehaviour
             }
             */
         }
+    }
+
+
+    private void OnTriggerEnter(Collider other) //Screenshake whenever you hit anything
+    {
+        Sequence shakeSequence = DOTween.Sequence();
+        shakeSequence.Append(mainCamera.DOShakePosition(0.6f, new Vector3(0.4f, 0.4f, 0f), 30, 10, false, true));
+        shakeSequence.Append(mainCamera.DOLocalMove(new Vector3(0, 0, 0), 0.4f));
+        shakeSequence.Play();
     }
 }
