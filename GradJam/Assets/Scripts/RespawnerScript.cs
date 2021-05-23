@@ -21,11 +21,11 @@ public class RespawnerScript : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown("escape")){
-            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+            //SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         }
 
-        if(transform.position.y < -10){
-            transform.position = new Vector3(-26f, 6f, 110f);
+        if(transform.position.y < -10f){
+            transform.position = new Vector3(-70.6f, 22f, 267.8f);
         }
 
         if(distance() < 1){
