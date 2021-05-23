@@ -10,6 +10,7 @@ public class CountDown : MonoBehaviour
     float timer = 180;
     Text minutes, seconds;
     public bool race = false;
+    public bool music = false;
     public AudioSource backgroundMusic;
     public AudioSource ambientSound;
     // Start is called before the first frame update
@@ -22,9 +23,21 @@ public class CountDown : MonoBehaviour
         seconds.text = "00";
         //race = true;
     }
-
+    public void MusicStart()
+    {
+        backgroundMusic.Play();
+        ambientSound.Play();
+    }
     void Update(){
+
         if(race){
+
+            if (!music)
+            {
+                music = true;
+                MusicStart();
+            }
+
             timer -= Time.deltaTime;
             simple = Mathf.FloorToInt(timer);
             min = simple / 60;
