@@ -9,7 +9,7 @@ public class CountDown : MonoBehaviour
     int min, sec, simple;
     float timer = 180;
     Text minutes, seconds;
-    bool race = false;
+    public bool race = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class CountDown : MonoBehaviour
         seconds = this.gameObject.transform.GetChild(1).gameObject.GetComponent<Text>();
         minutes.text = "3:";
         seconds.text = "00";
-        race = true;
+        //race = true;
     }
 
     void Update(){

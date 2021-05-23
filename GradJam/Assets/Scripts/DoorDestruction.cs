@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class DoorDestruction : MonoBehaviour
 {
-    public bool doubleDoorBool = false;
+    public bool doubleDoorBool = false, firstDoor = false;
     public GameObject singleDoor, doubleDoor;
+    public CountDown cd;
     void Start()
     {
 
@@ -15,6 +16,10 @@ public class DoorDestruction : MonoBehaviour
     {
         if (other.tag == "Pillow")
         {
+            if(firstDoor){
+                cd.race = true;
+            }
+
             if (!doubleDoorBool)
             {
                 Instantiate(singleDoor, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
