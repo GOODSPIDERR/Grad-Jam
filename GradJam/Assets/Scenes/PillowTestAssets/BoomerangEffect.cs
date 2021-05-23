@@ -57,16 +57,10 @@ public class BoomerangEffect : MonoBehaviour
         Vector3 boomerangOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
 
         if (go)
-<<<<<<< Updated upstream
-            {
-                transform.position = Vector3.MoveTowards(transform.position, boomerangOrigin + player.transform.forward * 3f, Time.deltaTime * 20); //Change The Position To The Location In Front Of The Player           
-            }
-=======
         {
                 transform.position = Vector3.MoveTowards(transform.position, pillow.transform.position + pillow.transform.forward * 3.5f, Time.deltaTime * 10); //Change The Position To The Location In Front Of The Player           
                 //sound.PlayOneShot(pillowSounds[0]);
         }
->>>>>>> Stashed changes
 
             if (!go)
             {
