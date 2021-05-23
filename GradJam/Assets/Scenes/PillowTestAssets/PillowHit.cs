@@ -7,7 +7,7 @@ public class PillowHit : MonoBehaviour
     private Animator pillowAnim;
     public bool leftHit = true;
     public bool iwasThrown;
-    
+
 
     void Start()
     {
@@ -52,13 +52,13 @@ public class PillowHit : MonoBehaviour
     }
     public void Catch()
     {
-         if (iwasThrown)
-         {
-             pillowAnim.SetTrigger("catchTrigger");
-             print("I'm catching");
+        if (iwasThrown)
+        {
+            pillowAnim.SetTrigger("catchTrigger");
+            print("I'm catching");
             iwasThrown = false;
-         }        
-         //iwasThrown = false;
+        }
+        //iwasThrown = false;
     }
     IEnumerator WaitaSecond()
     {
@@ -74,7 +74,7 @@ public class PillowHit : MonoBehaviour
         Moving();
         Throw();
         Catch();
-        
+
         if (Input.GetMouseButtonDown(0))
         {
             if (leftHit)
@@ -93,8 +93,8 @@ public class PillowHit : MonoBehaviour
                 leftHit = true;
 
             }
-            
-            
+
+
 
 
         }
