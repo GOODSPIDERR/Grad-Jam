@@ -49,7 +49,7 @@ public class PillowHit : MonoBehaviour
     }
     public void Throw()
     {
-        if (Input.GetMouseButtonDown(1) && canAttack)
+        if (Input.GetMouseButtonDown(1) && canAttack) //i don't know why the fuck this is not working
         {
             pillowAnim.SetTrigger("throwTrigger");
             //print("I'm throwing");
