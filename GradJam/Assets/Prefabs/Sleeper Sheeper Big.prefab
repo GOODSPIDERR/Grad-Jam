@@ -1154,9 +1154,9 @@ MonoBehaviour:
   currentHealth: 0
   poofPrefab: {fileID: 524054144349091373, guid: bc45d5cc2f36065499ec7231ec839eae, type: 3}
   mySheepSounds:
-  - {fileID: 8300000, guid: 39318c628767d3f4eb73802afdbe2de7, type: 3}
-  - {fileID: 8300000, guid: a317c8530bce706428b960ace7caaa08, type: 3}
-  - {fileID: 8300000, guid: c51f5a90d3bdc4c4583dce346fd1ca7f, type: 3}
+  - {fileID: 8300000, guid: 9a96efaa3ca7a4946a02bb5447a22394, type: 3}
+  - {fileID: 8300000, guid: 9a96efaa3ca7a4946a02bb5447a22394, type: 3}
+  - {fileID: 8300000, guid: 9a96efaa3ca7a4946a02bb5447a22394, type: 3}
   bigSheep: 1
   smolSheep: 0
 --- !u!114 &8471403303477283478
