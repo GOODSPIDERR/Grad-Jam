@@ -20,12 +20,14 @@ public class RespawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("escape")){
+        if (Input.GetKeyDown("escape"))
+        {
             //SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         }
 
-        if(transform.position.y < -10f){
-            transform.position = new Vector3(-61f, 21.6f, 267.7f);
+        if (transform.position.y < -10f)
+        {
+            transform.position = new Vector3(-70.6f, 22, 267.8f);
         }
         /*
         if(distance() < 1){
@@ -34,7 +36,8 @@ public class RespawnerScript : MonoBehaviour
         */
     }
 
-    double distance(){
+    double distance()
+    {
         double x, y, z, dist;
         x = transform.position.x - alarmClock.transform.position.x;
         y = transform.position.y - alarmClock.transform.position.y;
