@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoomerangEffect : MonoBehaviour
 {
+    //Needs more comments
     bool go;
     GameObject player;
     GameObject pillow;
@@ -12,11 +13,8 @@ public class BoomerangEffect : MonoBehaviour
     GameObject pillowMesh;
     private AudioSource sound;
     public List<AudioClip> pillowSounds = new List<AudioClip>();
-
-
     void Start()
     {
-
         go = false;
         player = GameObject.Find("Player");
         pillow = GameObject.Find("Pillow");
@@ -24,7 +22,6 @@ public class BoomerangEffect : MonoBehaviour
         pillowMesh.GetComponent<SkinnedMeshRenderer>().enabled = false;
 
         StartCoroutine(Boom());
-
     }
 
     IEnumerator Boom()

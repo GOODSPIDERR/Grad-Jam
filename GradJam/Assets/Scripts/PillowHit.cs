@@ -24,10 +24,11 @@ public class PillowHit : MonoBehaviour
 
     void Start()
     {
-
         pillowAnim = gameObject.GetComponent<Animator>();
-
     }
+
+    //Part of the old swinging mechanic; not needed anymore
+    /*
     public void EndSwingLeft()
     {
         pillowAnim.SetBool("swingLeftBool", false);
@@ -41,9 +42,10 @@ public class PillowHit : MonoBehaviour
         //print("right done");
 
     }
+    */
     public void Moving()
     {
-        if (Input.GetKey(KeyCode.W) || (Input.GetKey(KeyCode.S)) || Input.GetKey(KeyCode.D) || (Input.GetKey(KeyCode.A)))
+        if (Input.GetKey(KeyCode.W) || (Input.GetKey(KeyCode.S)) || Input.GetKey(KeyCode.D) || (Input.GetKey(KeyCode.A))) //Detects if you're moving and plays the running animation
         {
             pillowAnim.SetBool("movingBool", true);
             //pillowAnim.SetTrigger("movementTrigger");
@@ -51,13 +53,14 @@ public class PillowHit : MonoBehaviour
         }
         else
         {
-            pillowAnim.SetBool("movingBool", false);
+            pillowAnim.SetBool("movingBool", false); //Stops the animation if you're not holding any of the aforementioned keys
         }
     }
     public void Throw()
     {
-        if (Input.GetMouseButtonDown(1) && canAttack) //Throw attack
+        if (Input.GetMouseButtonDown(1) && canAttack) //If you click RMB and can attack, throws the pillow
         {
+            //This needs to be slightly reworked
             pillowAnim.SetTrigger("throwTrigger");
             GameObject clone = Instantiate(pillowPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as GameObject;
             pillowMeshRenderer.enabled = false;
@@ -102,6 +105,7 @@ public class PillowHit : MonoBehaviour
             swipeSound.pitch = Random.Range(0.95f, 1.05f);
             swipeSound.Play();
 
+            //Part of the old swinging mechanic; not needed anymore
             /*
             if (leftHit)
             {
@@ -117,18 +121,15 @@ public class PillowHit : MonoBehaviour
                 pillowAnim.SetBool("swingRightBool", true);
                 //print("time to swing left");
                 leftHit = true;
-
             }
             */
-
-
         }
     }
 
 
     private void OnTriggerEnter(Collider other) //Screenshake whenever you hit anything
     {
-        if (!hasHit)
+        if (!hasHit) //Makes sure that this only triggers once per swing
         {
             mainCamera.localPosition = new Vector3(0, 0, 0);
             hasHit = true;
@@ -141,7 +142,7 @@ public class PillowHit : MonoBehaviour
             hitSound.Play();
         }
 
-        if (other.GetComponent<Rigidbody>() != null)
+        if (other.GetComponent<Rigidbody>() != null) //If the thing you hit happens to have a rigidbody, applies a force in the direction you're facing
         {
             Rigidbody rb = other.GetComponent<Rigidbody>();
             Vector3 direction = (transform.position - other.transform.position).normalized;

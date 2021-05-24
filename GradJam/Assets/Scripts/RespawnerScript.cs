@@ -6,6 +6,8 @@ using System;
 
 public class RespawnerScript : MonoBehaviour
 {
+    //Needs more comments
+
     //private AssetBundle myBundle;
     //private string[] scenePaths;
     public GameObject alarmClock;

@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class DeleteScript : MonoBehaviour
 {
-    float timer = 5;
-    // Start is called before the first frame update
+    //This script self destructs whatever object it's attached to
+    public float timer = 5f;
+
     void Start()
     {
-        
+        StartCoroutine("SelfDestruct");
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator SelfDestruct()
     {
-        timer -= Time.deltaTime;
-        
-        if(timer < 0){
-            Destroy(gameObject);
-        }
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
     }
 }

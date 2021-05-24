@@ -9,6 +9,7 @@ using DG.Tweening;
 
 public class CountdownClock : MonoBehaviour
 {
+    //Needs more comments
     int min, sec, simple;
     public float timer = 180;
     public TextMeshProUGUI timeText;

@@ -5,25 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class AlarmClockScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other) //If the alarm clock detects the pillow, it starts the transition
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    /* public void ChangeScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
-    */
-    private void OnTriggerEnter(Collider other)
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (other.tag == "Pillow")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
 

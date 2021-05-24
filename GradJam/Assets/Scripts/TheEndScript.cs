@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TheEndScript : MonoBehaviour
 {
+    //Sends you back to the main menu after a given time, letting you hear the entire ending cutscene
     void Start()
     {
         StartCoroutine("EndgameTransition");
@@ -12,13 +13,13 @@ public class TheEndScript : MonoBehaviour
 
     void Update()
     {
+        //Used to send you back to the main menu if you pressed Escape. It does so automatically now
         /*
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("MainMenu");
         }
         */
-
     }
 
     IEnumerator EndgameTransition()

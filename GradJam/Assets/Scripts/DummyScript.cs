@@ -30,7 +30,6 @@ public class DummyScript : MonoBehaviour
         //hitSound = sounds[1];
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (agro)

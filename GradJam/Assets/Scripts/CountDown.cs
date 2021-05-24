@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CountDown : MonoBehaviour
 {
+    //Needs more comments
     int min, sec, simple;
     public float timer = 180;
     Text minutes, seconds;

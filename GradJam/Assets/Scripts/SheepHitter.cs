@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SheepHitter : MonoBehaviour
 {
-
+    //Needs more comments
     public static Vector3 sheepLocation;
     //The sheeps' current health point total
     public int currentHealth;
@@ -20,7 +20,6 @@ public class SheepHitter : MonoBehaviour
         if (bigSheep) currentHealth = 3;
         if (smolSheep) currentHealth = 1;
         sheepSound = GetComponent<AudioSource>();
-
     }
     public void Damage(int damageAmount)
     {

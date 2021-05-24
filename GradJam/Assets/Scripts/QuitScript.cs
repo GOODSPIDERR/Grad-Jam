@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class QuitScript : MonoBehaviour
 {
+    //While this is active, sends to the main menu if you press Escape
     void OnEnable()
     {
         StartCoroutine("SelfDisable");
