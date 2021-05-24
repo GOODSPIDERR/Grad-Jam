@@ -11,7 +11,7 @@ public class CountdownClock : MonoBehaviour
 {
     int min, sec, simple;
     public float timer = 180;
-    public TextMeshProUGUI minutes, seconds;
+    public TextMeshProUGUI timeText;
     public bool race = false;
     public bool music = false;
     private AudioSource alpha, beta;
@@ -35,8 +35,6 @@ public class CountdownClock : MonoBehaviour
         alpha = sounds[0];
         beta = sounds[1];
 
-        minutes.text = "2:";
-        seconds.text = "30";
         //race = true;
 
         StartCoroutine("CountDown");
@@ -66,27 +64,29 @@ public class CountdownClock : MonoBehaviour
             simple = Mathf.FloorToInt(timer);
             min = simple / 60;
             sec = simple % 60;
-            minutes.text = "" + min + ":";
+            timeText.text = "" + min + ":" + sec;
 
             if (timer < 0)
             {
                 Scene scene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(scene.name, LoadSceneMode.Single);
             }
-            else if (sec < 10)
+
+            if (sec < 10 && min > 0)
             {
-                seconds.text = "0" + sec;
+                timeText.text = "" + min + ":0" + sec;
             }
-            else
+
+            else if (sec < 10 && min <= 0)
             {
-                seconds.text = "" + sec;
+                timeText.text = "0:0" + sec;
             }
         }
     }
 
     IEnumerator CountDown()
     {
-        while (timer > 0)
+        while (timer >= 0)
         {
             timer--;
             //Sequence textTween = DOTween.Sequence();

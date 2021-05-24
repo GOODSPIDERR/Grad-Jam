@@ -32,19 +32,21 @@ public class CountDown : MonoBehaviour
     }
     public void MusicStart()
     {
-        
+
         alpha.Play();
         beta.Play();
     }
-    void Update(){
+    void Update()
+    {
 
-        if(race){
+        if (race)
+        {
 
             if (!music)
             {
-                    music = true;
-                    MusicStart();
-                
+                music = true;
+                MusicStart();
+
             }
 
             timer -= Time.deltaTime;
@@ -54,7 +56,8 @@ public class CountDown : MonoBehaviour
             minutes.text = "" + min + ":";
             //backgroundMusic.Play();
             //ambientSound.Play();
-            if (timer < 0){
+            if (timer < 0)
+            {
                 /*
                 Debug.Log("Game Over");
                 timer = 1;
@@ -63,11 +66,15 @@ public class CountDown : MonoBehaviour
                 */
                 Scene scene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(scene.name, LoadSceneMode.Single);
-            } else if(sec < 10) {
+            }
+            else if (sec < 10)
+            {
                 seconds.text = "0" + sec;
-            } else {
+            }
+            else
+            {
                 seconds.text = "" + sec;
-            }            
+            }
         }
     }
 }
