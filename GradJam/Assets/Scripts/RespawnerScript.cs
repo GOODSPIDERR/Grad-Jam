@@ -9,6 +9,7 @@ public class RespawnerScript : MonoBehaviour
     //private AssetBundle myBundle;
     //private string[] scenePaths;
     public GameObject alarmClock;
+    public GameObject quitObject;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,9 @@ public class RespawnerScript : MonoBehaviour
     {
         if (Input.GetKeyDown("escape"))
         {
-            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+            //SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+            quitObject.SetActive(true);
+
         }
 
         if (transform.position.y < -10f)

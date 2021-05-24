@@ -6,7 +6,6 @@ public class DoorDestruction : MonoBehaviour
 {
     public bool doubleDoorBool = false, firstDoor = false;
     public GameObject singleDoor, doubleDoor;
-    public CountDown cd;
     public CountdownClock clockTimer;
 
     public GameObject countDown;
@@ -22,7 +21,6 @@ public class DoorDestruction : MonoBehaviour
             if (firstDoor)
             {
                 countDown.SetActive(true);
-                cd.race = true;
                 clockTimer.race = true;
             }
 

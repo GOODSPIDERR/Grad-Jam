@@ -8,13 +8,13 @@ public class AlarmClockScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     /* public void ChangeScene(string sceneName)
     {
@@ -23,7 +23,7 @@ public class AlarmClockScript : MonoBehaviour
     */
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("TheEnd");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 
