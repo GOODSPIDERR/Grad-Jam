@@ -8,6 +8,8 @@ public class DoorDestruction : MonoBehaviour
     public GameObject singleDoor, doubleDoor;
     public CountDown cd;
     public CountdownClock clockTimer;
+
+    public GameObject countDown;
     void Start()
     {
 
@@ -17,7 +19,9 @@ public class DoorDestruction : MonoBehaviour
     {
         if (other.tag == "Pillow")
         {
-            if(firstDoor){
+            if (firstDoor)
+            {
+                countDown.SetActive(true);
                 cd.race = true;
                 clockTimer.race = true;
             }

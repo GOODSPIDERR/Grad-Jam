@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using DG.Tweening;
 
 
 public class CountdownClock : MonoBehaviour
 {
     int min, sec, simple;
     public float timer = 180;
-    TextMeshProUGUI minutes;
-    TextMeshProUGUI seconds;
+    public TextMeshProUGUI minutes, seconds;
     public bool race = false;
     public bool music = false;
     private AudioSource alpha, beta;
@@ -19,14 +19,16 @@ public class CountdownClock : MonoBehaviour
     public Image countdown;
     public float waitTime = 150.0f;
 
+    public Transform numbers;
 
 
-void Start()
+
+    void Start()
     {
         //Debug.Log("" + transform.childCount);
-        minutes = this.gameObject.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-        seconds = this.gameObject.transform.GetChild(3).gameObject.GetComponent<TextMeshProUGUI>();
-        
+        //minutes = this.gameObject.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+        //seconds = this.gameObject.transform.GetChild(3).gameObject.GetComponent<TextMeshProUGUI>();
+
 
         AudioSource[] sounds;
         sounds = GetComponents<AudioSource>();
@@ -36,6 +38,8 @@ void Start()
         minutes.text = "2:";
         seconds.text = "30";
         //race = true;
+
+        StartCoroutine("CountDown");
     }
     public void MusicStart()
     {
@@ -48,9 +52,9 @@ void Start()
 
         if (race)
         {
-            
+
             countdown.fillAmount += 1.0f / waitTime * Time.deltaTime;
-            
+
             if (!music)
             {
                 music = true;
@@ -58,7 +62,7 @@ void Start()
 
             }
 
-            timer -= Time.deltaTime;
+            //timer -= Time.deltaTime;
             simple = Mathf.FloorToInt(timer);
             min = simple / 60;
             sec = simple % 60;
@@ -77,6 +81,18 @@ void Start()
             {
                 seconds.text = "" + sec;
             }
+        }
+    }
+
+    IEnumerator CountDown()
+    {
+        while (timer > 0)
+        {
+            timer--;
+            //Sequence textTween = DOTween.Sequence();
+            numbers.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            numbers.DOScale(new Vector3(1, 1, 1), 0.25f).SetEase(Ease.Linear);
+            yield return new WaitForSeconds(1);
         }
     }
 }
