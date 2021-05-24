@@ -81,9 +81,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.04956484
+  m_TransitionDuration: 0.10179657
   m_TransitionOffset: 0
-  m_ExitTime: 0.94734555
+  m_ExitTime: 0.8951138
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -257,9 +257,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.052970767
+  m_TransitionDuration: 0.107099414
   m_TransitionOffset: 0
-  m_ExitTime: 0.9502059
+  m_ExitTime: 0.8960773
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -462,9 +462,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.04863572
+  m_TransitionDuration: 0.09787601
   m_TransitionOffset: 0
-  m_ExitTime: 0.9489544
+  m_ExitTime: 0.8997141
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -504,12 +504,6 @@ AnimatorController:
   m_Name: Pillow
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: movementTrigger
-    m_Type: 9
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: throwTrigger
     m_Type: 9
     m_DefaultFloat: 0
@@ -852,9 +846,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.055801928
+  m_TransitionDuration: 0.09939164
   m_TransitionOffset: 0
-  m_ExitTime: 0.94734555
+  m_ExitTime: 0.90375584
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
