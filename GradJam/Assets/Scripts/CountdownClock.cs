@@ -13,8 +13,8 @@ public class CountdownClock : MonoBehaviour
     int min, sec, simple;
     public float timer = 180;
     public TextMeshProUGUI timeText;
-    public bool race = false;
-    public bool music = false;
+    public bool race = true;
+    public bool music = true;
     private AudioSource alpha, beta;
 
     public Image countdown;

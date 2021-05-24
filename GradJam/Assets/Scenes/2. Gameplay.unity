@@ -9532,6 +9532,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 254236810}
     m_Modifications:
+    - target: {fileID: 670947590, guid: 70a662aae8ba923499aba2f71918f637, type: 3}
+      propertyPath: race
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 670947590, guid: 70a662aae8ba923499aba2f71918f637, type: 3}
+      propertyPath: music
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8814524339025240368, guid: 70a662aae8ba923499aba2f71918f637, type: 3}
       propertyPath: m_Name
       value: Player
