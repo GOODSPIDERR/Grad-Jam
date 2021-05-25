@@ -87,7 +87,7 @@ public class CountdownClock : MonoBehaviour
 
     IEnumerator CountDown()
     {
-        while (timer >= 0)
+        while (timer >= 0 && race)
         {
             timer--;
             //Sequence textTween = DOTween.Sequence();

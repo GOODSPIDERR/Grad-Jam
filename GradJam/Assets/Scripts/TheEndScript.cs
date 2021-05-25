@@ -9,6 +9,7 @@ public class TheEndScript : MonoBehaviour
     void Start()
     {
         StartCoroutine("EndgameTransition");
+        AudioListener.volume = 1f;
     }
 
     void Update()
