@@ -33,9 +33,48 @@ MonoBehaviour:
   - {fileID: 2417364081762260283}
   - {fileID: 9044392340014464596}
   - {fileID: -2680081999913933693}
-  - {fileID: 8536416127005674748}
   - {fileID: 2613016881471417678}
   - {fileID: 3336164458663927265}
+  - {fileID: 500863814232952172}
+--- !u!114 &500863814232952172
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
+  m_Name: ShadowsMidtonesHighlights
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  shadows:
+    m_OverrideState: 1
+    m_Value: {x: 0.6110996, y: 0.33991122, z: 1, w: -0.63983047}
+  midtones:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 0.94982713, z: 0.836094, w: 0.06355932}
+  highlights:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 0.19067791}
+  shadowsStart:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  shadowsEnd:
+    m_OverrideState: 0
+    m_Value: 0.3
+    min: 0
+  highlightsStart:
+    m_OverrideState: 0
+    m_Value: 0.55
+    min: 0
+  highlightsEnd:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
 --- !u!114 &2417364081762260283
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -142,51 +181,12 @@ MonoBehaviour:
     max: 1
   smoothness:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.018
     min: 0.01
     max: 1
   rounded:
     m_OverrideState: 1
     m_Value: 0
---- !u!114 &8536416127005674748
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
-  m_Name: ShadowsMidtonesHighlights
-  m_EditorClassIdentifier: 
-  active: 0
-  m_AdvancedMode: 0
-  shadows:
-    m_OverrideState: 1
-    m_Value: {x: 0.31411326, y: 0.51379895, z: 1, w: 0.54158604}
-  midtones:
-    m_OverrideState: 1
-    m_Value: {x: 1, y: 0.933745, z: 0.37257123, w: 0.058027074}
-  highlights:
-    m_OverrideState: 1
-    m_Value: {x: 0.95350766, y: 0.99686116, z: 1, w: 0.81237894}
-  shadowsStart:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  shadowsEnd:
-    m_OverrideState: 0
-    m_Value: 0.3
-    min: 0
-  highlightsStart:
-    m_OverrideState: 0
-    m_Value: 0.55
-    min: 0
-  highlightsEnd:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
 --- !u!114 &9044392340014464596
 MonoBehaviour:
   m_ObjectHideFlags: 3

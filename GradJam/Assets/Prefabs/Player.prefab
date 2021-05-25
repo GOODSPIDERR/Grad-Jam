@@ -379,8 +379,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 150
   timeText: {fileID: 538126549}
-  race: 0
-  music: 0
+  race: 1
+  music: 1
   countdown: {fileID: 1425450527}
   waitTime: 150
   numbers: {fileID: 538126548}
@@ -1153,7 +1153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4296092269750527126}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: 4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7948798122642712703}

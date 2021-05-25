@@ -23,7 +23,7 @@ Material:
   m_Name: Ceiling
   m_Shader: {fileID: -6465566751694194690, guid: 673343daf6984a7448a89feaaf38edd1, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -91,7 +91,9 @@ Material:
     m_Floats:
     - Vector1_0974f2b07e164f368ebce7813e449ac1: 0.3
     - Vector1_7fab89f37b33450f96e639f31153c2c5: 0.2
+    - Vector1_c8f8fa608fd04eea9f1a89f85139a4e0: 1
     - Vector1_d13a40b933724322aed4630bbee6a3ac: 0
+    - Vector1_fecaec911d5b4264a1524f4234e1324d: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
