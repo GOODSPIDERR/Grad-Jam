@@ -6,6 +6,12 @@ ModelImporter:
   - first:
       74: -7217342925999570631
     second: default.001Action
+  - first:
+      74: -7373152349939918595
+    second: default.001Action.001
+  - first:
+      74: 1503093111337446125
+    second: default.001Action.002
   externalObjects: {}
   materials:
     materialImportMode: 2
