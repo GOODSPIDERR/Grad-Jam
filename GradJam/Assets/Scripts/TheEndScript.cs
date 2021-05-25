@@ -8,6 +8,7 @@ public class TheEndScript : MonoBehaviour
     //Sends you back to the main menu after a given time, letting you hear the entire ending cutscene
     void Start()
     {
+        Time.timeScale = 1f;
         StartCoroutine("EndgameTransition");
         AudioListener.volume = 1f;
     }
