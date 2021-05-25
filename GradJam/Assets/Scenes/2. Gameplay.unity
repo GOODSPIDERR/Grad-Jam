@@ -22707,7 +22707,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0a2dc2a0468e0ea4493f4420dd5f9f96, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.536
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
