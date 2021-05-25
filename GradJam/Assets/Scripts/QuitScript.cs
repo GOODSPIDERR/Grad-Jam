@@ -13,7 +13,7 @@ public class QuitScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) //this is the second "ESC" press. First is triggered in RespawnerScript
         {
             SceneManager.LoadScene(0);
         }

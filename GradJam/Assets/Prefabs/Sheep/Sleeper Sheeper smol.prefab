@@ -352,9 +352,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3352998102667173897}
   - component: {fileID: 2721281034992319152}
+  - component: {fileID: 2721281034992319159}
   - component: {fileID: 2721281034992319153}
   - component: {fileID: 2721281034992319154}
-  - component: {fileID: 2721281034992319159}
   - component: {fileID: 2721281034992319158}
   - component: {fileID: 8246129802413073799}
   m_Layer: 0
@@ -394,11 +394,30 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2721281034992319155}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.58183753, y: 0.79871076, z: 0.3462604}
   m_Center: {x: 0.021903872, y: 0.3834466, z: 0.030001476}
+--- !u!95 &2721281034992319159
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721281034992319155}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 38be4372565bbec4cb6173edce2b198f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2721281034992319153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,7 +430,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c4447bb3e5eb6c4e898d8105b84111f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
   poofPrefab: {fileID: 524054144349091373, guid: bc45d5cc2f36065499ec7231ec839eae, type: 3}
   mySheepSounds:
   - {fileID: 8300000, guid: 39318c628767d3f4eb73802afdbe2de7, type: 3}
@@ -435,25 +453,6 @@ MonoBehaviour:
   spottingRange: 30
   spottingAngle: 60
   pushForce: 5
---- !u!95 &2721281034992319159
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2721281034992319155}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 38be4372565bbec4cb6173edce2b198f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!195 &2721281034992319158
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -486,7 +485,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 39318c628767d3f4eb73802afdbe2de7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.25
   m_Pitch: 1

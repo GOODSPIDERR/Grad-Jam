@@ -1080,7 +1080,7 @@ GameObject:
   - component: {fileID: 605232527831097729}
   m_Layer: 8
   m_Name: Sleeper Sheeper Big
-  m_TagString: Untagged
+  m_TagString: Sheep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1151,7 +1151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c4447bb3e5eb6c4e898d8105b84111f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
   poofPrefab: {fileID: 524054144349091373, guid: bc45d5cc2f36065499ec7231ec839eae, type: 3}
   mySheepSounds:
   - {fileID: 8300000, guid: 9a96efaa3ca7a4946a02bb5447a22394, type: 3}

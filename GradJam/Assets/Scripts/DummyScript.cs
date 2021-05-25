@@ -10,7 +10,6 @@ public class DummyScript : MonoBehaviour
     private GameObject enemy;
     private FirstPersonController fpc;
     private Rigidbody erb;
-    // private AudioSource hitSound;
     public float hearingRange, spottingRange, spottingAngle, pushForce;
     private bool agro, attack;
     Animator sheepAnim;
@@ -24,10 +23,6 @@ public class DummyScript : MonoBehaviour
         erb = enemy.GetComponent<Rigidbody>();
         sheepAnim = GetComponent<Animator>();
 
-
-        //AudioSource[] sounds;
-        //sounds = GetComponents<AudioSource>();
-        //hitSound = sounds[1];
     }
 
     void Update()
@@ -136,6 +131,6 @@ public class DummyScript : MonoBehaviour
         Vector3 targetDir = enemy.transform.position - transform.position;
         targetDir.y = 0;
         erb.AddForce(targetDir.normalized * pushForce, ForceMode.Impulse);
-        //hitSound.Play();
+        
     }
 }

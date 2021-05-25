@@ -1,46 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System;
 
 public class RespawnerScript : MonoBehaviour
 {
-    //Needs more comments
-
-    //private AssetBundle myBundle;
-    //private string[] scenePaths;
     public GameObject alarmClock;
     public GameObject quitObject;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //myBundle = AssetBundle.LoadFromFile("Assets/AssetBundles/scenes");
-        //scenePaths = myBundle.GetAllScenePaths();
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyDown("escape"))
         {
-            //SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
-            quitObject.SetActive(true);
-
+            quitObject.SetActive(true); //displays quit confirmation 
         }
 
-        if (transform.position.y < -10f)
+        if (transform.position.y < -10f) //if you fall off
         {
-            transform.position = new Vector3(-70.6f, 22, 267.8f);
+            transform.position = new Vector3(-70.6f, 22, 267.8f); //spawn back before the jumping platforms
         }
-        /*
-        if(distance() < 1){
-            SceneManager.LoadScene("", LoadSceneMode.Single);
-        }
-        */
-    }
 
+    }
+    /*
     double distance()
     {
         double x, y, z, dist;
@@ -53,4 +35,5 @@ public class RespawnerScript : MonoBehaviour
         dist = Math.Sqrt(x + y + z);
         return dist;
     }
+    */
 }

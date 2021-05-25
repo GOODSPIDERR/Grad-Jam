@@ -6,50 +6,27 @@ using DG.Tweening;
 public class PillowHit : MonoBehaviour
 {
     private Animator pillowAnim;
-    public bool leftHit = true;
     public bool iwasThrown;
-    public BoxCollider reach;
-    private bool danger = false;
-    private SheepHitter sheep;
-    private Collider hittingStuff;
     public bool canAttack = true;
     public Transform mainCamera;
     public GameObject featherVFX;
     public Transform featherSpawn;
     public AudioSource swipeSound, hitSound;
     public GameObject pillowPrefab;
-    public Camera cam;
     public SkinnedMeshRenderer pillowMeshRenderer;
     bool hasHit;
+
 
     void Start()
     {
         pillowAnim = gameObject.GetComponent<Animator>();
     }
-
-    //Part of the old swinging mechanic; not needed anymore
-    /*
-    public void EndSwingLeft()
-    {
-        pillowAnim.SetBool("swingLeftBool", false);
-        //print("left done");
-
-    }
-    public void EndSwingRight()
-    {
-
-        pillowAnim.SetBool("swingRightBool", false);
-        //print("right done");
-
-    }
-    */
     public void Moving()
     {
+        // could optimize eventually by moving this function out of update and just check in else statement for key release 
         if (Input.GetKey(KeyCode.W) || (Input.GetKey(KeyCode.S)) || Input.GetKey(KeyCode.D) || (Input.GetKey(KeyCode.A))) //Detects if you're moving and plays the running animation
         {
             pillowAnim.SetBool("movingBool", true);
-            //pillowAnim.SetTrigger("movementTrigger");
-            //print("I'm moving");
         }
         else
         {
@@ -64,8 +41,6 @@ public class PillowHit : MonoBehaviour
             pillowAnim.SetTrigger("throwTrigger");
             GameObject clone = Instantiate(pillowPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as GameObject;
             pillowMeshRenderer.enabled = false;
-            //print("I'm throwing");
-            //iwasThrown = true;
             StartCoroutine(WaitaSecond());
         }
     }
@@ -74,19 +49,16 @@ public class PillowHit : MonoBehaviour
         if (iwasThrown)
         {
             pillowAnim.SetTrigger("catchTrigger");
-            //print("I'm catching");
             iwasThrown = false;
         }
-        //iwasThrown = false;
+        
     }
     IEnumerator WaitaSecond()
     {
-        //iwasThrown = true;
-        yield return new WaitForSeconds(0.5f); //how long to wait till it returns
+        yield return new WaitForSeconds(0.5f); //how long to wait till it returns.
+        // if time is adjusted we need to change in Boomerang script as well. 
         iwasThrown = true;
     }
-
-
 
     void Update()
     {
@@ -94,38 +66,14 @@ public class PillowHit : MonoBehaviour
         Throw();
         Catch();
 
-
-        //Copied this from PillowRaycast
-        Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
-
         if (Input.GetMouseButton(0) && canAttack) //Melee attack
         {
             hasHit = false;
             pillowAnim.SetTrigger("swingTrigger");
             swipeSound.pitch = Random.Range(0.95f, 1.05f);
             swipeSound.Play();
-
-            //Part of the old swinging mechanic; not needed anymore
-            /*
-            if (leftHit)
-            {
-                //pillowAnim.SetBool("swingLeftBool", false);
-                pillowAnim.SetBool("swingLeftBool", true);
-                //print("time to swing right");
-                leftHit = false;
-
-            }
-            else
-            {
-                //pillowAnim.SetBool("swingRightBool", false);
-                pillowAnim.SetBool("swingRightBool", true);
-                //print("time to swing left");
-                leftHit = true;
-            }
-            */
         }
     }
-
 
     private void OnTriggerEnter(Collider other) //Screenshake whenever you hit anything
     {

@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class SheepHitter : MonoBehaviour
 {
-    //Needs more comments
-    public static Vector3 sheepLocation;
-    //The sheeps' current health point total
-    public int currentHealth;
+    //This is the script where the sheep prefabs take damage, instantiate poof of smoke vfx and play sheep sound
+    //public static Vector3 sheepLocation;
+    private int currentHealth;
     public GameObject poofPrefab;
     private AudioSource sheepSound;
     public List<AudioClip> mySheepSounds = new List<AudioClip>();
@@ -16,22 +15,19 @@ public class SheepHitter : MonoBehaviour
 
     public void Start()
     {
-        sheepLocation = gameObject.transform.position;
+        //sheepLocation = gameObject.transform.position;
         if (bigSheep) currentHealth = 3;
         if (smolSheep) currentHealth = 1;
         sheepSound = GetComponent<AudioSource>();
     }
     public void Damage(int damageAmount)
     {
-        //subtract damage amount when Damage function is called
-        sheepSound.PlayOneShot(mySheepSounds[Random.Range(0, 2)]);
-        currentHealth -= damageAmount;
-        //Check if health has fallen below zero
+        //subtract damage amount when Damage function is called. It is called here and also in Boomerangscript
+
+        currentHealth -= damageAmount; //health decrease with each hit. 
         if (currentHealth <= 0)
         {
-            //sheepSound.PlayOneShot(mySheepSounds[Random.Range(0, 2)]);
-            //if health has fallen below zero, make it disappear 
-            gameObject.SetActive(false);
+            gameObject.SetActive(false); //if health falls below zero, make it disappear
             GameObject clone;
             clone = Instantiate(poofPrefab, new Vector3(transform.position.x, transform.position.y + 1.2f, transform.position.z), transform.rotation) as GameObject;
         }
@@ -39,15 +35,11 @@ public class SheepHitter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.name);
-        //if (other.gameObject.CompareTag("Pillow"))
-        if (other.tag == "Pillow" || other.tag == "FlyingPillow")
+        if (other.tag == "Pillow" || other.tag == "FlyingPillow") //If hit by either pillow or flying pillow, take damage. 
         {
             sheepSound.PlayOneShot(mySheepSounds[Random.Range(0, 2)]);
             Damage(1);
-            //Debug.Log("I'm hit noooo");
-        }
-        //Debug.Log("hit");
+         }
     }
 }
 
