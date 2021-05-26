@@ -14,12 +14,14 @@ public class PillowHit : MonoBehaviour
     public AudioSource swipeSound, hitSound;
     public GameObject pillowPrefab;
     public SkinnedMeshRenderer pillowMeshRenderer;
+    Transform player;
     bool hasHit;
 
 
     void Start()
     {
         pillowAnim = gameObject.GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     public void Moving()
     {
@@ -39,9 +41,14 @@ public class PillowHit : MonoBehaviour
         {
             //This needs to be slightly reworked
             pillowAnim.SetTrigger("throwTrigger");
+            pillowMeshRenderer.enabled = false;
+            Instantiate(pillowPrefab, transform.position, Quaternion.Euler(mainCamera.rotation.x, player.rotation.y, 0));
+
+            /*
             GameObject clone = Instantiate(pillowPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as GameObject;
             pillowMeshRenderer.enabled = false;
             StartCoroutine(WaitaSecond());
+            */
         }
     }
     public void Catch()

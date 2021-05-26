@@ -36,12 +36,12 @@ public class BoomerangEffect : MonoBehaviour
         flatPillowToRotate.transform.Rotate(0, Time.deltaTime * 300, 0); //Rotate the pillow and by how quickly
         if (go)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position + player.transform.forward * throwRange, Time.deltaTime * throwSpeed); 
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position + player.transform.forward * throwRange, Time.deltaTime * throwSpeed);
             //move the pillow in the direction in front of the player       
         }
         if (!go)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z), Time.deltaTime * 20); 
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z), Time.deltaTime * 20);
             //bring the pillow back
         }
         if (!go && Vector3.Distance(player.transform.position, transform.position) < 1)
