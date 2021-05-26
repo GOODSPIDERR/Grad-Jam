@@ -1118,7 +1118,7 @@ GameObject:
   - component: {fileID: 7948798122642712703}
   m_Layer: 0
   m_Name: Pillow
-  m_TagString: Pillow
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1391,7 +1391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4296092269750527126}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.5}
+  m_LocalPosition: {x: 0, y: 0, z: 3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7948798122642712703}
@@ -2484,14 +2484,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1917179ba3627f145b1970e5c51b0bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iwasThrown: 0
   canAttack: 1
-  mainCamera: {fileID: 8814524337631742883}
   featherVFX: {fileID: 2359544484471660266, guid: 87cb23b6df1171b488347bcc4cb7f334, type: 3}
   featherSpawn: {fileID: 8737264604383021180}
   swipeSound: {fileID: 7723916057054691000}
   hitSound: {fileID: 1779380631}
-  pillowPrefab: {fileID: 1413198453119165857, guid: 5b22e008e8784da4a9f0b8fc6a19db6a, type: 3}
+  pillowPrefab: {fileID: 7636117207486658054, guid: 1080896203500b14e903edd7dde508cd, type: 3}
   pillowMeshRenderer: {fileID: 8755360709946984199}
 --- !u!135 &7495156557753773454
 SphereCollider:
@@ -2788,7 +2786,7 @@ Transform:
   - {fileID: 3880368203466150910}
   m_Father: {fileID: 8877331471076705372}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 10.091551, y: 0.18676724, z: 21.958199}
+  m_LocalEulerAnglesHint: {x: 10.447061, y: 0.6367867, z: -25.39377}
 --- !u!1 &7419283278530317088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2978,7 +2976,7 @@ Transform:
   - {fileID: 6072336232775926457}
   m_Father: {fileID: 6072336233745269102}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50.391293, y: 40.51553, z: 39.07779}
+  m_LocalEulerAnglesHint: {x: 1.3265754, y: 79.307915, z: 96.99049}
 --- !u!1 &8533648516259551465
 GameObject:
   m_ObjectHideFlags: 0
@@ -3008,7 +3006,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3880368203466150910}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -2.2776234, y: 2.2565813, z: 64.32108}
+  m_LocalEulerAnglesHint: {x: -25.655268, y: 10.359164, z: -68.6524}
 --- !u!1 &8814524337561877799
 GameObject:
   m_ObjectHideFlags: 0
@@ -3879,4 +3877,4 @@ Transform:
   - {fileID: 2526233980586210396}
   m_Father: {fileID: 7918875872556130880}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 13.241075, y: 10.553326, z: 84.174385}
+  m_LocalEulerAnglesHint: {x: -10.581838, y: -12.934028, z: -88.421455}

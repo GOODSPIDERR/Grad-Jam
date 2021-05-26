@@ -26,13 +26,14 @@ public class PillowHit : MonoBehaviour
     public void Moving()
     {
         //Could optimize eventually by moving this function out of update and just check in else statement for key release 
-        if (Input.GetKey(KeyCode.W) || (Input.GetKey(KeyCode.S)) || Input.GetKey(KeyCode.D) || (Input.GetKey(KeyCode.A))) //Detects if you're moving and plays the running animation
+        //Optimized it a tiny bit by checking axes instead of key presses
+        if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f) //Detects if you're moving and plays the running animation
         {
             pillowAnim.SetBool("movingBool", true);
         }
         else
         {
-            pillowAnim.SetBool("movingBool", false); //Stops the animation if you're not holding any of the aforementioned keys
+            pillowAnim.SetBool("movingBool", false); //Stops the animation if you're not moving
         }
     }
     public void Throw()
@@ -86,18 +87,26 @@ public class PillowHit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) //Screenshake whenever you hit anything
     {
-        if (!hasHit) //Makes sure that this only triggers once per swing
+        if (!hasHit)
         {
-            mainCamera.localPosition = new Vector3(0, 0, 0);
+            //Makes sure that this only triggers once per swing
             hasHit = true;
+
+            //Spawns the feather VFX
+            Instantiate(featherVFX, featherSpawn.position, transform.rotation);
+
+            //Camera shake
+            mainCamera.localPosition = new Vector3(0, 0, 0);
             Sequence shakeSequence = DOTween.Sequence();
             shakeSequence.Append(mainCamera.DOShakePosition(0.6f, new Vector3(0.4f, 0.4f, 0f), 30, 10, false, true));
             shakeSequence.Append(mainCamera.DOLocalMove(new Vector3(0, 0, 0), 0.4f));
             shakeSequence.Play();
-            Instantiate(featherVFX, featherSpawn.position, transform.rotation);
-            hitSound.pitch = Random.Range(0.95f, 1.05f);
-            hitSound.Play();
+
+            //Sound stuff is handled by the Feather VFX prefab now
+            //hitSound.pitch = Random.Range(0.95f, 1.05f);
+            //hitSound.Play();
         }
+
 
         if (other.GetComponent<Rigidbody>() != null) //If the thing you hit happens to have a rigidbody, applies a force in the direction you're facing
         {
@@ -105,6 +114,7 @@ public class PillowHit : MonoBehaviour
             Vector3 direction = (transform.position - other.transform.position).normalized;
             rb.AddForce(-direction, ForceMode.Impulse);
         }
+
 
     }
 }

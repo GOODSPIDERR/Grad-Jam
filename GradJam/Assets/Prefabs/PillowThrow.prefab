@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: 1061805144710215907}
   - component: {fileID: 7636117207486658053}
   - component: {fileID: 3654567459727866318}
-  - component: {fileID: 7636117207486658052}
-  - component: {fileID: 3301610560630980923}
-  - component: {fileID: 5745567152853052743}
+  - component: {fileID: 1471174472122349779}
+  - component: {fileID: 4125804710078646052}
   - component: {fileID: 5446692726896322927}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PillowThrow
   m_TagString: Pillow
   m_Icon: {fileID: 0}
@@ -116,8 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 12
+  collision: {fileID: 1471174472122349779}
+  hitBox: {fileID: 4125804710078646052}
   featherVFX: {fileID: 2359544484471660266, guid: 87cb23b6df1171b488347bcc4cb7f334, type: 3}
---- !u!65 &7636117207486658052
+--- !u!65 &1471174472122349779
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,26 +127,12 @@ BoxCollider:
   m_GameObject: {fileID: 7636117207486658054}
   m_Material: {fileID: 13400000, guid: 8b999c0dd34c79d40a106fcc07fb3533, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 5.3803663, y: 1.5138195, z: 3.4340756}
-  m_Center: {x: 0.0004919609, y: 0.00035302204, z: -0.11413404}
---- !u!136 &3301610560630980923
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7636117207486658054}
-  m_Material: {fileID: 13400000, guid: 8b999c0dd34c79d40a106fcc07fb3533, type: 2}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.7170368
-  m_Height: 5.380364
-  m_Direction: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4340737, y: 5.380364, z: 1.5138179}
   m_Center: {x: -0.114134006, y: 0.0004919767, z: 0.00035300848}
---- !u!135 &5745567152853052743
-SphereCollider:
+--- !u!65 &4125804710078646052
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -155,8 +142,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0, y: 0, z: 2}
+  m_Size: {x: 3.434074, y: 6.5, z: 2.5}
+  m_Center: {x: -0.114134006, y: 0.0004919767, z: 0.00035300848}
 --- !u!82 &5446692726896322927
 AudioSource:
   m_ObjectHideFlags: 0
