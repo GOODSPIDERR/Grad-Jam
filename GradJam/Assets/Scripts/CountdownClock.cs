@@ -20,6 +20,8 @@ public class CountdownClock : MonoBehaviour
     public Image countdown;
     public float waitTime = 150.0f;
     public Transform numbers;
+    bool youreLate = false;
+    public GameObject lateObject;
 
 
     void Start()
@@ -52,11 +54,13 @@ public class CountdownClock : MonoBehaviour
             sec = simple % 60;
             timeText.text = "" + min + ":" + sec;
 
+            /*
             if (timer < 0)
             {
-                Scene scene = SceneManager.GetActiveScene();
-                SceneManager.LoadScene(scene.name, LoadSceneMode.Single);
+                //Scene scene = SceneManager.GetActiveScene();
+                //SceneManager.LoadScene(scene.name, LoadSceneMode.Single);
             }
+            */
 
             if (sec < 10 && min > 0)
             {
@@ -67,6 +71,18 @@ public class CountdownClock : MonoBehaviour
             {
                 timeText.text = "0:0" + sec;
             }
+
+        }
+
+        if (timer < 0)
+        {
+            timeText.text = "0:00";
+            if (!youreLate)
+            {
+                lateObject.SetActive(true);
+                youreLate = true;
+            }
+
         }
     }
 

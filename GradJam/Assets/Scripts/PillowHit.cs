@@ -51,7 +51,7 @@ public class PillowHit : MonoBehaviour
             pillowAnim.SetTrigger("catchTrigger");
             iwasThrown = false;
         }
-        
+
     }
     IEnumerator WaitaSecond()
     {
