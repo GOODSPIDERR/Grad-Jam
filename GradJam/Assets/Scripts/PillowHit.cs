@@ -6,9 +6,10 @@ using DG.Tweening;
 public class PillowHit : MonoBehaviour
 {
     private Animator pillowAnim;
-    public bool iwasThrown;
+    //Part of the old boomerang pillow system; don't need this anymore
+    //public bool iwasThrown;
     public bool canAttack = true;
-    public Transform mainCamera;
+    Transform mainCamera;
     public GameObject featherVFX;
     public Transform featherSpawn;
     public AudioSource swipeSound, hitSound;
@@ -16,16 +17,15 @@ public class PillowHit : MonoBehaviour
     public SkinnedMeshRenderer pillowMeshRenderer;
     Transform player;
     bool hasHit;
-
-
     void Start()
     {
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         pillowAnim = gameObject.GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     public void Moving()
     {
-        // could optimize eventually by moving this function out of update and just check in else statement for key release 
+        //Could optimize eventually by moving this function out of update and just check in else statement for key release 
         if (Input.GetKey(KeyCode.W) || (Input.GetKey(KeyCode.S)) || Input.GetKey(KeyCode.D) || (Input.GetKey(KeyCode.A))) //Detects if you're moving and plays the running animation
         {
             pillowAnim.SetBool("movingBool", true);
@@ -37,43 +37,45 @@ public class PillowHit : MonoBehaviour
     }
     public void Throw()
     {
-        if (Input.GetMouseButtonDown(1) && canAttack) //If you click RMB and can attack, throws the pillow
-        {
-            //This needs to be slightly reworked
-            pillowAnim.SetTrigger("throwTrigger");
-            pillowMeshRenderer.enabled = false;
-            Instantiate(pillowPrefab, transform.position, Quaternion.Euler(mainCamera.rotation.x, player.rotation.y, 0));
-
-            /*
-            GameObject clone = Instantiate(pillowPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as GameObject;
-            pillowMeshRenderer.enabled = false;
-            StartCoroutine(WaitaSecond());
-            */
-        }
+        pillowMeshRenderer.enabled = false;
+        Instantiate(pillowPrefab, transform.position, mainCamera.rotation);
     }
     public void Catch()
     {
-        if (iwasThrown)
-        {
-            pillowAnim.SetTrigger("catchTrigger");
-            iwasThrown = false;
-        }
-
+        pillowMeshRenderer.enabled = true;
     }
+
+    //Part of the old boomerang pillow system; don't need this anymore
+    /*
     IEnumerator WaitaSecond()
     {
         yield return new WaitForSeconds(0.5f); //how long to wait till it returns.
         // if time is adjusted we need to change in Boomerang script as well. 
         iwasThrown = true;
     }
+    */
 
     void Update()
     {
-        Moving();
-        Throw();
-        Catch();
+        if (Input.GetMouseButton(1) && canAttack) //If you click RMB and can attack, throws the pillow
+        {
+            //This needs to be slightly reworked
+            //Why? It's perfect
+            pillowAnim.SetTrigger("throwTrigger");
+            swipeSound.pitch = Random.Range(0.95f, 1.05f);
+            swipeSound.Play();
 
-        if (Input.GetMouseButton(0) && canAttack) //Melee attack
+            //Part of the old boomerang system
+            /*
+            GameObject clone = Instantiate(pillowPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as GameObject;
+            pillowMeshRenderer.enabled = false;
+            StartCoroutine(WaitaSecond());
+            */
+        }
+
+        Moving();
+
+        if (Input.GetMouseButton(0) && canAttack) //If you click LMB and can attack, swings the pillow
         {
             hasHit = false;
             pillowAnim.SetTrigger("swingTrigger");
